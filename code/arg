@@ -1,0 +1,8 @@
+[killed(Tony,Sam), on_purpose(Tony)], ~[psychosis(Tony), self_defence] => murderer(Tony)
+[has_evidence(Tony), reliable(witness1), said(witness1,"killed(Tony,Sam)")], ~[] => killed(Tony,Sam)
+[detective(Jacky), find(Jacky,evidence_Tony)], ~[] => has_evidence(Tony)
+[said(witness2,"killed(Jack,Sam)")], ~[] => -murderer(Tony)
+[-has_evidence(Jack), said(witness2,"killed(Jack,Sam)"), unreliable(witness2)], ~[] => -killed(Tony,Sam)
+[detective(Jacky), find(Jacky,no_evidence_Jack)], ~[] => -has_evidence(Jack)
+[said(witness3,"has(Tony,alibi)"), unreliable(witness3)], ~[] => -has_evidence(Tony)
+

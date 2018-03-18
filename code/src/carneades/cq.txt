@@ -1,0 +1,12 @@
+cq: Is self_defence ?
+cq: Is T has_evidence ?
+cq: Is P unsound_mind ?
+cq: Does T killed S ?
+cq: Does T waste W ?
+cq: Does P agrees E ?
+cq: Is T has_enough_money ?
+cq: Is T has_enough_time ?
+cq: Does E contains A ?
+cq: Is G not_care ?
+cq: Does A has B ?
+cq: Is A not_need ?

@@ -1,0 +1,34 @@
+## sample file of input data for AILP assignment 2
+## (updated 6/11)
+##
+## this is a comment, followed by a blank line
+
+##
+
+Default proof standard: clear_and_convincing
+
+Main query: murder
+
+## want different proof standard for main query
+
+Proof standard: murder : beyond_reasonable_doubt
+
+## some assumptions
+
+Assumption: expert dr_brown
+Assumption: dr_brown expertise informatics
+Assumption: witness said " smith killed jones "
+Assumption: reliable witness
+Assumption: dr_brown said " unsound_mind smith "
+Assumption: " unsound_mind smith " in_domain mental_health
+Assumption: had_intent smith
+Assumption: not self_defence
+
+## some arguments
+
+a1 : If witness said " smith killed jones " and reliable witness then smith killed jones : 0.9
+
+a2 : If smith killed jones and had_intent smith then murder unless unsound_mind smith or self_defence : 0.95
+
+## fixed quoted prop syntax in the following
+a3 : If expert dr_brown and dr_brown expertise mental_health and " unsound_mind smith " in_domain mental_health and dr_brown said " unsound_mind smith " then unsound_mind smith : 0.95

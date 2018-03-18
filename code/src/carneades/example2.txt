@@ -1,0 +1,53 @@
+## This example argues that whether Tony will eat outside or not
+
+
+## some choices has a percentage problem, like the weather forecast, people will not totally trust one side, so I think
+## clear_and_convincing is more reasonable
+
+Default proof standard: clear_and_convincing
+
+
+Main query: Tony eat outside
+
+
+## proof standard here
+
+Proof standard: Tony eat outside: beyond_reasonable_doubt
+
+
+## some assumptions
+
+Assumption: weather_forecast said "maybe rain today"
+Assumption: TV weather_forecast
+Assumption: weather_app showed "eighty_percent no_rain today "
+Assumption: nearby restaurant
+Assumption: Tony buy electrical_device
+Assumption: Tony save_money everyday
+Assumption: Tony do_homework at_school
+Assumption: not Tony waste time_on_wayback
+Assumption: Tony has good_grade
+
+
+## some argument
+
+arg1: If not rain today and has_enough_time Tony and parents agrees eat_outside and has_enough_money Tony then Tony eat outside: 0.95
+
+## Maybe is a ambiguous word, can not trust it a lot
+arg2: If weather_forecast said "maybe rain today" and TV weather_forecast then rain today: 0.3
+
+## It gives a exact rate, thus people will trust it more
+arg3: If weather_app showed "eighty_percent no_rain today " then not rain today: 0.8
+
+arg4: If parents transfer money and Tony save_money everyday then has_enough_money Tony: 0.8
+
+arg5: If Tony buy electrical_device and Tony save_money everyday then not has_enough_money Tony: 0.3
+
+arg6: If Tony has good_grade then parents agrees eat_outside : 0.8
+
+arg7: If Tony has good_grade then parents transfer money: 0.9
+
+arg8: If Tony do_homework at_school and Tony study at_home then Tony has good_grade: 0.9
+
+arg9: If nearby restaurant and Tony has no_much_homework then has_enough_time Tony unless Tony waste time_on_wayback: 0.7
+
+arg10: If Tony do_homework at_school then Tony has no_much_homework: 0.8

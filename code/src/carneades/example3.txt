@@ -1,0 +1,56 @@
+## this example decides whether a email is spam
+
+
+## spam mail is a probability problem, a mail can not be 100% decided as spam, so I think
+## clear_and_convincing is more reasonable
+
+
+Default proof standard: clear_and_convincing
+
+
+Main query: spam
+
+
+## proof standard here
+
+Proof standard: spam : beyond_reasonable_doubt
+
+
+## some assumptions
+
+Assumption: email in junk_email_category
+Assumption: email has unsubscribe_choice
+Assumption: not_cared information
+Assumption: not browse shopping_website
+Assumption: not click subscription
+Assumption: not email goods food
+Assumption: not email goods electronic_device
+Assumption: email contains useful_information
+Assumption: email has price
+Assumption: email has selling_information
+
+
+## some arguments
+
+arg1: If email contains advertisement and not_need advertisement and email in junk_email_category then spam: 0.8
+
+arg2: If not subscribed email and not_care goods then not_need goods: 0.8
+
+arg3: If not browse shopping_website and not click subscription then not subscribed email: 0.8
+
+arg4: If email has selling_information and email has price then email contains advertisement: 0.7
+
+arg: If email promote sales and email has price then email has selling_information: 0.8
+
+arg5: If not_need goods and not_cared information then not_need advertisement: 0.9
+
+arg6: If email has unsubscribe_choice then user unsubscribe email: 0.9
+
+## too less evidence to prove the result
+arg7: If email contains useful_information then not spam: 0.19
+
+arg8: If not email goods food and not email goods electronic_device then not_care goods: 0.9
+
+## too less evidence to prove the result, besides a email has selling_information
+##  although it can unsubscribe, but we can not decide it's not spam
+arg9: If user unsubscribe email and email has selling_information then not spam: 0.19

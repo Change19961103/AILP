@@ -1,0 +1,57 @@
+## This is a example of whether Tony is murderer, a witness said Jack is murderer
+## some argument to show a result
+
+
+## every part should have its weight to give a conclusion, if we use 'scintilla' then if one argument support, it will
+## get a result, but it's not reasonable for law problem
+
+Default proof standard: clear_and_convincing
+
+
+Main query: murderer Tony
+
+
+## proof standard here
+
+## proof standard of main query should use the most careful one
+Proof standard: murderer Tony: beyond_reasonable_doubt
+
+
+## some assumptions
+
+Assumption: detective Jacky
+Assumption: Doctor Chen
+Assumption: witness1 said "Tony killed Sam"
+Assumption: witness2 said "Jack killed Sam"
+Assumption: reliable witness1
+Assumption: unreliable witness2
+Assumption: on_purpose Tony
+Assumption: Chen said "not_psychosis Tony"
+Assumption: Jacky find evidence_Tony
+Assumption: Jacky find no_evidence_Jack
+Assumption: not self_defence
+Assumption: unreliable witness3
+Assumption: witness3 find evidence_Jack
+Assumption: Jacky find no_evidence_Jack
+Assumption: witness3 said "Tony has alibi"
+Assumption: relative witness4
+
+
+## some arguments
+
+arg1: If witness1 said "Tony killed Sam" and has_evidence Tony and reliable witness1 then Tony killed Sam: 0.95
+
+## cause witness2 is unreliable and there is also no evidence on Jack, so it has a low weights
+arg2: If witness2 said "Jack killed Sam" and not has_evidence Jack and unreliable witness2 then not Tony killed Sam: 0.3
+
+arg3: If detective Jacky and Jacky find evidence_Tony then has_evidence Tony: 0.75
+
+## unreliable witness3, so we can't give a heavy weight on it
+arg4: If witness3 said "Tony has alibi" and unreliable witness3 then not has_evidence Tony: 0.5
+
+arg5: If Tony killed Sam and on_purpose Tony then murderer Tony unless psychosis Tony or self_defence: 0.9
+
+## no enough evidence to show not murderer Tony
+arg6: If witness2 said "Jack killed Sam" then not murderer Tony: 0.19
+
+arg7: If Jacky find no_evidence_Jack and detective Jacky then not has_evidence Jack: 0.8
